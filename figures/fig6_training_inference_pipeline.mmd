@@ -1,0 +1,14 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart LR
+  D1["Historical Telemetry"] --> D2["Preprocess<br/>Filter/Align"]
+  D2 --> D3["GAI Augmentation<br/>Attack Synthesis"]
+  D3 --> D4["Replay Buffer"]
+  D4 --> D5["CTDE MARL Training"]
+  D5 --> D6["Validation<br/>Robustness"]
+  D6 --> D7["Deployment<br/>Edge/Cloud"]
+  D7 --> D8["Online Inference<br/>Detect/Mitigate"]
+  D8 --> D9["XAI + LLM<br/>Explanation"]
+  D9 --> D10["Operator Feedback"]
+  D10 --> D4
+  D8 --> D11["Recovery and Adaptation"]
+  D11 --> D2

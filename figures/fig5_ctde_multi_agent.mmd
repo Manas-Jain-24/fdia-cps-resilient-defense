@@ -1,0 +1,38 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart LR
+  subgraph ENV["Environment"]
+    ENV1["CPS State<br/>x_t"]
+    ENV2["Reward<br/>r_t"]
+  end
+
+  subgraph AG["Agents: Decentralized Execution"]
+    A1["Detector"]
+    A2["Mitigator"]
+    A3["Recoverer"]
+    A4["Trust"]
+  end
+
+  subgraph CT["Centralized Training"]
+    C1["Central Critic"]
+    C2["Replay Buffer"]
+    C3["Policy Update"]
+  end
+
+  ENV1 --> A1
+  ENV1 --> A2
+  ENV1 --> A3
+  ENV1 --> A4
+  A1 --> C2
+  A2 --> C2
+  A3 --> C2
+  A4 --> C2
+  C2 --> C1 --> C3
+  C3 --> A1
+  C3 --> A2
+  C3 --> A3
+  C3 --> A4
+  A1 --> ENV2
+  A2 --> ENV2
+  A3 --> ENV2
+  A4 --> ENV2
+  ENV2 --> C2

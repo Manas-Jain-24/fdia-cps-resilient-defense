@@ -1,0 +1,42 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart LR
+  subgraph ENV["CPS Environment"]
+    E1["Plant and Network"]
+    E2["Sensors/Actuators"]
+  end
+
+  subgraph GAI["Generative AI Augmentation"]
+    G1["GAN/VAE/Diffusion"]
+    G2["Synthetic FDI Scenarios"]
+    G3["Hardness and Diversity"]
+  end
+
+  subgraph MARL["Multi-Agent DRL"]
+    M1["Detection Agent"]
+    M2["Mitigation Agent"]
+    M3["Recovery Agent"]
+    M4["Trust/Reputation Agent"]
+    M5["Shared Replay and Critic"]
+  end
+
+  subgraph ORCH["LLM Orchestration and XAI"]
+    L1["LLM Orchestrator"]
+    L2["Policy Selection"]
+    L3["Explanation Generator"]
+  end
+
+  E2 --> M1
+  G1 --> G2 --> M1
+  G2 --> M2
+  G2 --> M3
+  M1 --> M5
+  M2 --> M5
+  M3 --> M5
+  M4 --> M5
+  M5 --> L1
+  L1 --> L2 --> M2
+  L1 --> M3
+  M1 --> L3
+  M2 --> L3
+  M3 --> L3
+  L3 --> E1

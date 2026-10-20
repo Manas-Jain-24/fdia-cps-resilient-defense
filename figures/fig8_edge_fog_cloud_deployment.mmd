@@ -1,0 +1,36 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart TB
+  subgraph FIELD["Field Layer"]
+    F1["Sensors/PMU"]
+    F2["Actuators"]
+    F3["RTU/IED"]
+  end
+
+  subgraph EDGE["Edge Layer"]
+    E1["Edge Gateway"]
+    E2["Local Detector"]
+    E3["Real-Time Mitigation"]
+  end
+
+  subgraph FOG["Fog/Regional Layer"]
+    G1["Coordinator"]
+    G2["Digital Twin"]
+    G3["GAI Generator"]
+  end
+
+  subgraph CLOUD["Cloud Layer"]
+    C1["MARL Training"]
+    C2["LLM Orchestrator"]
+    C3["XAI and Audit"]
+  end
+
+  F1 --> E1 --> E2 --> E3
+  E3 --> G1
+  G1 <--> G2
+  G1 --> C1
+  C1 <--> C2
+  C2 --> C3
+  C3 --> G1
+  G1 --> E3
+  E3 --> F2
+  F3 --> E1

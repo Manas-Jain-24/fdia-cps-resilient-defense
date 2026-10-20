@@ -1,0 +1,24 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+sequenceDiagram
+  participant S as Sensors/PMU
+  participant E as Edge Defender
+  participant D as Detection Agent
+  participant G as GAI Generator
+  participant M as Mitigation Agent
+  participant R as Recovery Agent
+  participant L as LLM Orchestrator
+  participant X as XAI
+  participant O as Operator
+
+  S->>E: Telemetry/Measurements
+  E->>D: Preprocessed state
+  D->>G: Request hard FDI samples
+  G-->>D: Synthetic stealthy FDI
+  D->>L: Detection confidence and context
+  L->>M: Allocate mitigation policy
+  M->>E: Isolate/Reconfigure
+  E-->>R: Impact assessment
+  R->>L: Recovery plan
+  L->>X: Explain decision
+  X-->>O: Human-readable rationale
+  O-->>L: Approve/Override

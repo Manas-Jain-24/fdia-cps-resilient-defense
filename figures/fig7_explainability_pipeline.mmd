@@ -1,0 +1,14 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart LR
+  X1["Telemetry and<br/>Agent Actions"] --> X2["Model<br/>MARL/GAI"]
+  X2 --> X3["Local Explanations<br/>SHAP/LIME"]
+  X2 --> X4["Counterfactual<br/>Attack/Recovery"]
+  X2 --> X5["Attention and<br/>Trust Scores"]
+  X3 --> X6["LLM Summarizer"]
+  X4 --> X6
+  X5 --> X6
+  X6 --> X7["Role-Based Explanation"]
+  X7 --> X8["Operator/SOC"]
+  X7 --> X9["Audit Log"]
+  X8 --> X10["Feedback to Orchestrator"]
+  X10 --> X6

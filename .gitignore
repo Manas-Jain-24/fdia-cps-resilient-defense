@@ -1,0 +1,33 @@
+# LaTeX build output
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+
+# Local working material and generated distribution files
+scratch/
+*.zip
+*.docx
+*.xlsx
+*.html
+*.pdf
+
+# Keep the publication figures required by main.tex
+!figures/*.pdf
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]

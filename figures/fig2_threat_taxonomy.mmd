@@ -1,0 +1,29 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+flowchart TB
+  R["Advanced FDI Attacks on CPS"]
+  R --> K["Adversary Knowledge"]
+  R --> C["Capabilities"]
+  R --> T["Attack Types"]
+  R --> I["Impact"]
+  R --> D["Detection Challenges"]
+
+  K --> K1["Topology"]
+  K --> K2["Model/Parameters"]
+  K --> K3["Historical Data"]
+
+  C --> C1["Stealthy/Coordinated"]
+  C --> C2["Replay/Time Sync"]
+  C --> C3["Multi-point Injection"]
+
+  T --> T1["Static/Dynamic"]
+  T --> T2["Load Redistribution"]
+  T --> T3["Topology FDI"]
+  T --> T4["Sensor/Actuator FDI"]
+
+  I --> I1["State Estimation Error"]
+  I --> I2["Control/Protection Failure"]
+  I --> I3["Physical/Economic Damage"]
+
+  D --> D1["Low Observability"]
+  D --> D2["Concept Drift"]
+  D --> D3["Resource Constraints"]

@@ -1,0 +1,13 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'10px','fontFamily':'Times New Roman,serif','primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#000000','lineColor':'#000000','secondaryColor':'#f2f2f2','tertiaryColor':'#ffffff'}}}%%
+stateDiagram-v2
+  [*] --> Normal
+  Normal --> Detect: Telemetry anomaly
+  Detect --> Isolate: Confirmed FDI
+  Detect --> Normal: Benign
+  Isolate --> Mitigate: Apply countermeasure
+  Mitigate --> Recover: Stabilize
+  Recover --> Explain: Generate rationale
+  Explain --> Adapt: Update policies
+  Adapt --> Normal
+  Mitigate --> Explain: Operator query
+  Recover --> Detect: Residual anomaly
